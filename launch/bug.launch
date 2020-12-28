@@ -1,0 +1,12 @@
+<launch> 
+    <param name="/use_sim_time" value="true" />   
+    
+    <!-- Launch turtle bot world. -->
+    <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch"/>       
+    <node name="stopper" pkg="bug" type="stopper_node.py" output="screen">
+        <param name="forward_speed" type="double" value="0.5"/>
+        <param name="angular_speed" type="double" value="0.3"/>
+	<param name="end_point_x" type="double" value="-8.0"/>
+        <param name="end_point_y" type="double" value="-7.0"/>
+    </node>
+</launch>
